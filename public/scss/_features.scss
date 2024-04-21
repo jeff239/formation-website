@@ -1,0 +1,299 @@
+/*** 
+====================================================================
+  Features Section
+====================================================================
+
+***/
+
+.features-section{
+  position: relative;
+  margin-top: -2px;
+  background-color: var(--theme-color2);
+  overflow: hidden;
+  @include media-breakpoint-down(xl){
+    overflow: hidden;
+    background-color: unset;
+    margin-top: 160px;
+  }
+  @include media-breakpoint-down(lg){
+    margin-top: 0;
+  }
+  .bg-background{
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      background-image: url(../images/background/8.jpg);
+      width: 102%;
+      height: 615px;
+      top: 11px;
+      left: -22px;
+      right: 0;
+      z-index: 1;
+      @include media-breakpoint-down(xl){
+        background-image: unset;
+      }
+    }
+  }
+  .btn-box {
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .feature-block {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    .inner-box {
+      position: relative;
+      padding: 136px 13px 115px 61px;
+      transition: all 500ms ease;
+      overflow: hidden;
+      z-index: 170;
+      @include media-breakpoint-down(xxl){
+        padding: 118px 34px 139px 34px;
+      }
+      @include media-breakpoint-down(xl){
+        background-color: var(--theme-color2);
+        margin-bottom: 20px;
+        padding: 70px 13px 80px 61px;
+      }
+      @include media-breakpoint-down(sm){
+        padding: 54px 13px 46px 24px;
+      }
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      background-image: url(../images/icons/doted.png);
+      width: 368px;
+      height: 329px;
+      bottom: 0;
+      left: 53px;
+      background-repeat: no-repeat;
+      opacity: 0;
+    }
+    &:hover {
+      background-color: var(--theme-color-dark);
+      @include media-breakpoint-down(xl){
+        background-color: unset;
+      }
+      &::before{
+        opacity: 100;
+      }
+      .icon-box {
+        .icon {
+          transform: scale(-1) rotate(180deg);
+        }
+      }
+    }
+  }
+  .icon-box {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    &::after{
+      content: "";
+      position: absolute;
+      width: 202px;
+      height: 1px;
+      background-color: #404040;
+      bottom: 18px;
+      left: 2px;
+    }
+    &::before{
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 1px;
+      background-color: var(--theme-color1);
+      bottom: 18px;
+      left: 2px;
+      z-index: 1;
+    }
+    .icon {
+      position: relative;
+      display: inline-block;
+      font-size: 50px;
+      line-height: 1em;
+      color: var(--theme-color-light);
+      transition: all 400ms ease;
+      margin-bottom: 50px;
+      margin-left: 30px;
+      &::after{
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: rgb(255 255 255 / 11%);
+        left: -24px;
+        top: -15px;
+      }
+    }
+  }
+  h4 {
+    position: relative;
+    display: block;
+    font-size: 22px;
+    line-height: 1.2em;
+    color: var(--theme-color-light);
+    font-weight: 500;
+    margin-bottom: 26px;
+    a {
+      color: var(--theme-color-light);
+      display: inline-block;
+      text-transform: uppercase;
+      transition: all 300ms ease;
+      &:hover {
+        color: #f14b59;
+      }
+    }
+  }
+  .text {
+    position: relative;
+    display: block;
+    color: #888888;
+    font-weight: 400;
+    cursor: default;
+  }
+  .link-box {
+    position: relative;
+    display: block;
+    a {
+      padding: 10px 20px;
+      line-height: 20px;
+      font-size: 14px;
+    }
+  }
+}
+
+.feature-block-two{
+  position: relative;
+  margin-bottom: 56px;
+  z-index: 1;
+  &:nth-last-child(4){
+    &::before{
+      display: none;
+    }
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    background-image: url(../images/icons/ser-dotts.png);
+    width: 94px;
+    height: 15px;
+    right: -103px;
+    top: 43%;
+    z-index: 1;
+  }
+  .inner-box {
+    position: relative;
+    transition: all 300ms ease;
+    @include media-breakpoint-down(sm){
+      text-align: center;
+    }
+    &:hover {
+      .icon{
+        transform: scaleX(-1);
+      }
+      .read-more{
+        color: var(--theme-color1);
+        border-color: var(--theme-color1);
+      }
+      .content-box{
+        transform: translatey(30px);
+      }
+    }
+  }
+  .image{
+    position: relative;
+    margin-bottom: 0;
+    margin-left: 63px;
+    @include media-breakpoint-down(sm){
+      margin-left: 0;
+    }
+    img{
+      position: relative;
+      width: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      filter: grayscale(2);
+    }
+  }
+  .content-box{
+    position: absolute;
+    right: 68px;
+    left: 10px;
+    bottom: -1px;
+    background-color: #ffffff;
+    padding: 21px 30px 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.05);
+    transition: all 300ms ease;
+    @include media-breakpoint-down(sm){
+      right: 0;
+    }
+    .inner{
+      position: relative;
+      display: none;
+      overflow: hidden;
+    }
+    .icon {
+      position: absolute;
+      right: 25px;
+      top: -28px;
+      @include flex-center;
+      height: 68px;
+      width: 68px;
+      background-color: var(--theme-color1);
+      color: #ffffff;
+      font-size: 42px;
+      line-height: 1em;
+      border-radius: 50%;
+      z-index: 2;
+      transition: all 200ms ease;
+      &::after{
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 1px solid #878c8f54;
+        right: -15px;
+        bottom: -14px;
+      }
+    }
+    .cat{
+      font-size: 19px;
+      display: inline-block;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: var(--theme-color1);
+      letter-spacing: .02em;
+      @include title-font;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    h5{
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .read-more{
+      border-bottom: 1px solid #878c8f;
+      color: #878c8f;
+      transition: all 300ms ease;
+      margin-bottom: 16px;
+      display: inline-block;
+      &:hover{
+        color: var(--theme-color2);
+      }
+    }
+  }
+  .text {
+    position: relative;
+    z-index: 2;
+    margin-top: -6px;
+    transition: all 300ms ease;
+  }
+}

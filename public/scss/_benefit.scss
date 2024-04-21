@@ -1,0 +1,183 @@
+/*** 
+
+====================================================================
+    benefits Section
+====================================================================
+
+***/
+
+.benifet-section{
+  position: relative;
+  padding: 100px 0;
+  margin-top: -2px;
+  overflow: hidden;
+  @include media-breakpoint-down(sm){
+    display: none;
+  }
+  .slick-prev,
+  .slick-next{
+    display: none;
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 195px;
+    height: 100%;
+    background-color: #0f0d1b;
+    @include media-breakpoint-down(lg){
+      display: none;
+    }
+  }
+  .benifet-slider{
+    .slick-next{
+      @media (max-width: 1280px){
+        left: 65px;
+        right: auto;
+      }
+    }
+    .slick-prev{
+      @media (max-width: 1280px){
+        left: 20px;
+      }
+    }
+    .slick-prev,
+    .slick-next{
+      color: var(--theme-color1);
+      @media (max-width: 1280px){
+        bottom: -50px;
+        top: auto;
+      }
+      &:before{
+        background-color: var(--theme-color1);
+        color: var(--theme-color-light);
+        padding: 6px 10px 8px;
+      }      
+    }
+  }
+}
+
+// benefit-block
+.benifet-block{
+  .inner-box{
+    background-color: var(--theme-color-light);
+    border: 1px solid #e7e8e9;
+    margin-left: 19px;
+    margin-right: 7px;
+    position: relative;
+    padding: 37px 40px 41px 161px;
+    @include media-breakpoint-down(lg){
+      padding: 37px 21px 41px 26px;
+      text-align: center;
+    }
+    &::before{
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      background-color: var(--theme-color1);
+      transition: all 600ms ease;
+      left: 0;
+      top: 0;
+    }
+    &:hover{
+      &::before{
+        width: 100%;
+      }
+      .icon-box{
+        background-color: var(--theme-color-light);
+        .icon{
+          color: var(--theme-color1);
+        }
+        &::after{
+          background-color: var(--theme-color-light);
+        }
+      }
+      .content-box{
+        span{
+          color: var(--theme-color-light);
+        }
+        .title{
+          color: var(--theme-color-light);
+        }
+        .text{
+          color: var(--theme-color-light);
+        }
+      }
+    }
+    .icon-box{
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      width: 114px;
+      height: 114px;
+      background-color: var(--theme-color1);
+      text-align: center;
+      line-height: 114px;
+      display: flex;
+      justify-content: center;
+      transition: all 600ms ease;
+      @include media-breakpoint-down(lg){
+        display: inline-block;
+        left: 0;
+        margin-bottom: 10px;
+        position: relative;
+        top: 0;
+      }
+      .icon{
+        font-size: 60px;
+        color: var(--theme-color-light);
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        bottom: -45px;
+        left: 50%;
+        width: 6px;
+        height: 30px;
+        background-color: #e2e3e4;
+        transform: translateX(-50%);
+        @include media-breakpoint-down(lg){
+          display: none;
+        }
+      }
+      &::after{
+        background-color: var(--theme-color1);
+        border-radius: 10px;
+        bottom: -62px;
+        content: "";
+        height: 7px;
+        left: 50%;
+        position: absolute;
+        width: 7px;
+        transform: translateX(-50%);
+        @include media-breakpoint-down(lg){
+          display: none;
+        }
+      }
+  }
+  .content-box{
+      position: relative;
+      span{
+        color: var(--theme-color1);
+        display: block;
+        font-family: var(--title-font2);
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        transition: all 600ms ease;
+      }
+      .title{
+        font-family: var(--title-font2);
+        font-weight: 500;
+        margin-bottom: 9px;
+        text-transform: uppercase;
+        transition: all 600ms ease;
+      }
+      .text{
+        @include text;
+        transition: all 600ms ease;
+      }
+    }
+  }
+}

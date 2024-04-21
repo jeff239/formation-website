@@ -1,0 +1,268 @@
+/*** 
+
+====================================================================
+    Video Section
+====================================================================
+
+***/
+
+.video-section{
+  position: relative;
+  padding: 120px 0px;
+  z-index: 2;
+  .image{
+    position: relative;
+    margin-bottom: 0;
+    &:before {
+      @include overlay;
+      background-color: #101010;
+      opacity: .6;
+      content: '';
+    }
+    img{
+      width: 100%;
+      object-fit: cover;
+      min-height: 300px;
+      filter: grayscale(4);
+    }
+  }
+  .content-box{
+    position: relative;
+    overflow: hidden;
+    .overlay-1 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      @include media-breakpoint-down(sm){
+        display: none;
+      }
+    }
+  }
+  .btn-box-video{
+    background: var(--theme-color-light);
+    bottom: 0;
+    left: 233px;
+    max-width: 350px;
+    padding: 50px 61px;
+    position: absolute;
+    width: 100%;
+    z-index: 16;
+    @include media-breakpoint-down(lg){
+      left: 0;
+    }
+    @include media-breakpoint-down(md){
+      max-width: 270px;
+      padding: 20px;
+    }
+    h5{
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      @include media-breakpoint-down(md){
+        margin-bottom: 0;
+      }
+    }
+    .play-btn{
+      position: relative;
+      margin-bottom: 35px;
+      display: inline-block;
+      z-index: 3;
+      @include media-breakpoint-down(md){
+        margin-bottom: 15px;
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 80px;
+        background-color: var(--theme-color3);
+        left: 107px;
+        top: 38px;
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        background-color: var(--theme-color1);
+        border-radius: 50%;
+        left: 212px;
+        top: 36px;
+      }
+      .icon{
+        position: relative;
+        transform: translate(0px);
+        left: 0px;
+        height: 80px;
+        width: 80px;
+        border: 1px solid #e0dfe2;
+        line-height: 96px;
+        font-size: 27px;
+        border-radius: 50%;
+        background-color: var(--theme-color-light);
+        color: var(--theme-color1);
+        &:hover{
+          background-color: var(--theme-color1);
+          color: var(--theme-color-light);
+        }
+      }
+    }
+  }
+
+  .tabs-column{
+    .inner-column{
+      .about-tabs{
+        .btn-box {
+          position: absolute;
+          right: -161px;
+          @include media-breakpoint-down(xl){
+            right: -100px;
+          }
+          @include media-breakpoint-down(lg){
+            right: 0;
+            z-index: 1;
+          }
+          @include media-breakpoint-down(sm){
+            position: relative;
+          }
+          .tab-btn{
+            font-size: 14px;
+            color: var(--theme-color2);
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 58px 0px;
+            border-bottom: 1px solid var(--theme-color3);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            @include for-xxl{
+              padding: 47px 0px;
+            }
+            @include media-breakpoint-down(xxl){
+              padding: 45px 0px;
+            }
+            @include media-breakpoint-down(xl){
+              padding: 28px 0px;
+            }
+            @include media-breakpoint-down(lg){
+              background-color: var(--theme-color-light);
+              padding: 20px 10px;
+            }
+            &:last-child{
+              border:none;
+            }
+            .float-text{
+              font-size: 70px;
+              color: #dddcdf8f;
+              position: absolute;
+              z-index: -1;
+              @include media-breakpoint-down(xl){
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/*** 
+
+====================================================================
+    Video Section
+====================================================================
+
+***/
+
+.video-section-two{
+  position: relative;
+  padding: 140px 0 250px;
+  text-align: center;
+  .bg{
+    filter: grayscale(2);
+    z-index: -2;
+  }
+  &::before{
+    @include overlay;
+    background-color: #0f0d1b;
+    opacity: 0.9;
+    z-index: 0;
+    content: "";
+  }
+  .sec-title {
+    h2{
+      @include title;
+      position: relative;
+      z-index: 1;
+      @include media-breakpoint-down(sm){
+        font-size: 33px;
+      }
+    }
+  }
+  .play-now{
+    position: relative;
+    display: inline-block;
+    z-index: 99;
+  }
+}
+
+
+
+/*** 
+
+====================================================================
+    vide section Three
+====================================================================
+
+***/
+
+.video-section-three{
+  position: relative;
+  padding: 120px 0;
+  .outer-box{
+    text-align: center;
+    .btn-box-two{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 36px;
+      .play-now{
+        position: relative;
+        margin: 17px 0;
+        &::before{
+          border: 2px solid rgba(72, 70, 83, 0.9);
+          border-radius: 50%;
+          content: "";
+          height: 96px;
+          left: -17px;
+          position: absolute;
+          top: -17px;
+          width: 96px;
+        }
+        .icon{
+          background-color: var(--theme-color1);
+          color: var(--theme-color-light);
+          height: 62px;
+          line-height: 62px;
+          padding-left: 0;
+          width: 62px;
+        }
+      }
+    }
+    .title{
+      color: var(--theme-color-light);
+      font-family: var(--title-font2);
+      line-height: 60px;
+      font-weight: 500;
+      font-size: 50px;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      @include media-breakpoint-down(sm){
+        font-size: 42px;
+      }
+    }
+  }
+}

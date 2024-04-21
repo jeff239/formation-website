@@ -1,0 +1,373 @@
+
+/*** 
+
+====================================================================
+  Anim Icons
+====================================================================
+
+***/
+
+  
+.reveal {
+    position: relative;
+    display: inline-flex;
+    visibility: hidden;
+    overflow: hidden;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transform-origin: left;
+    }   
+}
+
+.bg-parallax{
+    background-repeat: no-repeat;
+    img{
+        opacity: 0;
+        @include media-breakpoint-down(lg){
+            opacity: 1;
+        }
+    }
+}
+  
+
+.anim-icons {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    max-width: calc(var(--container-width) - 30px);
+    margin: 0 auto;
+}
+
+[text-split] {
+    opacity: 0;
+}
+
+.word {
+    overflow: hidden;
+    padding-bottom: 0.1em;
+    margin-bottom: -0.1em;
+    transform-origin: bottom;
+}
+
+.anim-icons.full-width {
+    max-width: 100%;
+}
+
+.anim-icons .icon {
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.icon-turbines{
+    width: 651px;
+    height: 304px;
+    background-image: url(../images/icons/icon-turbines.png);
+}
+
+.icon-turbines-2 {
+    width: 465px;
+    height: 283px;
+    background-image: url(../images/icons/icon-turbines-2.png);
+}
+
+.icon-turbines-3 {
+    width: 270px;
+    height: 312px;
+    background-image: url(../images/icons/icon-turbines-3.png);
+}
+
+.icon-turbines-4 {
+    width: 497px;
+    height: 535px;
+    background-image: url(../images/icons/icon-turbines-4.png);
+}
+
+.shap-background-3{
+    width: 1088px;
+    height: 697px;
+    background-image: url(../images/icons/shap-1.jpg);
+}
+
+
+.bg-shap-two{
+    background-image: url(../images/main-slider/shap-3.png);
+    width: 686px;
+    height: 746px;
+}
+.shap-background-2{
+    width: 525px;
+    height: 475px;
+    background-image: url(../images/icons/shap-2.png);
+}
+
+.line-background{
+    width: 649px;
+    height: 630px;
+    background-image: url(../images/icons/line-3.png);
+}
+
+.shap-image{
+    width: 352px;
+    height: 700px;
+    background-image: url(../images/resource/faq-1.png); 
+}
+
+.bg-pattren{
+    width: 585px;
+    height: 772px;
+    background-image: url(../images/icons/line-2.png);
+    top: -490px;
+    z-index: -2;
+}
+
+.shap-background{
+    width: 1485px;
+    height: 1048px;
+    background-image: url(../images/icons/line-5.png);
+}
+
+.shap-background-5{
+    width: 1485px;
+    height: 1235px;
+    background-image: url(../images/icons/line-6.png);
+}
+
+
+
+.bounce-y{
+    animation: bounce-y 10s infinite linear;
+}
+
+.bounce-x{
+    animation: bounce-x 10s infinite linear;
+}
+
+.zoom-one{
+    animation: zoom-one 10s infinite linear;
+}
+
+.zoom-two{
+    animation: zoom-two 5s infinite linear;
+}
+
+@keyframes float{
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce-y {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce-x {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(30px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoom-one {
+    0% {
+        transform: scale(.95);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(.95);
+    }
+}
+
+@keyframes zoom-two {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.overlay-anim {
+    position: relative;
+    &:after {
+        background: rgba(255, 255, 255, 0.3);
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 0;
+        opacity: 1;
+        z-index: 9;
+        pointer-events: none;
+    }
+    &:hover{
+        &:after {
+            height: 100%;
+            opacity: 0;
+            transition: all 400ms linear;
+        }
+    }   
+}
+
+.overlay-anim-two {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+    &:hover {
+        &:after {
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transition: all 400ms linear;
+        }
+    }
+    &:after {
+        background: rgba(255, 255, 255, .3);
+        bottom: 0;
+        content: "";
+        left: 50%;
+        position: absolute;
+        right: 51%;
+        top: 0;
+        opacity: 1;
+        pointer-events: none;
+        transition: all 300ms linear;
+    }
+}
+
+
+
+// Animated Moving Circles
+
+.circle {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    left: -10px;
+    top: -10px;
+    border-radius: 100%;
+    z-index: 1;
+    pointer-events: none;
+    z-index: 10000;
+    transform: scale(1);
+    @supports (mix-blend-mode: difference) {
+        background-color: white;
+        mix-blend-mode: difference;
+    }
+    @include for-md{
+        display: none !important;
+    }
+}
+
+.circle-follow {
+    position: fixed;
+    mix-blend-mode: difference;
+    width: 30px;
+    height: 30px;
+    left: -21px;
+    top: -21px;
+    border-radius: 100%;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+    z-index: 10000;
+    transform: scale(1);
+    @supports (mix-blend-mode: difference) {
+        border: 1px solid #fff;
+        mix-blend-mode: difference;
+    }
+    @include for-md {
+        display: none !important;
+    }
+}
+
+
+/* Animate 1 */
+.owl-carousel{
+    .animate-7,
+    .animate-6,
+    .animate-5,
+    .animate-4,
+    .animate-3,
+    .animate-2,
+    .animate-1{
+        opacity: 0;
+        transform: translateY(100px);
+        transition: all 500ms ease;
+    }
+    .animate-x {
+        opacity: 0;
+        transform: translateX(100px);
+        transition: all 500ms ease;
+    }
+    
+    .active{
+        .animate-7,
+        .animate-6,
+        .animate-5,
+        .animate-4,
+        .animate-3,
+        .animate-2,
+        .animate-1 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animate-2 {
+            transition-delay: 300ms;
+        }
+        .animate-3 {
+            transition-delay: 600ms;
+        }
+        .animate-4 {
+            transition-delay: 900ms;
+        }
+        .animate-5 {
+            transition-delay: 1200ms;
+        }
+        .animate-6 {
+            transition-delay: 1500ms;
+        }
+        .animate-7 {
+            transition-delay: 1800ms;
+        }
+    }
+}
+

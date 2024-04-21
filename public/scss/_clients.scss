@@ -1,0 +1,219 @@
+/*** 
+
+====================================================================
+    Clients Section
+====================================================================
+
+***/
+
+.clients-section{
+    position: relative;
+    padding: 120px 0px  120px;
+    &::before{
+        content: "";
+        position: absolute;
+        height: 217px;
+        background-color: var(--theme-color1);
+        width: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        @include media-breakpoint-down(sm){
+            left: 14px;
+        }
+    }
+    .owl-dots{
+        display:none;
+    }
+    .sponsors-outer {
+        margin: -1px;
+    }
+}
+
+.client-block{
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    margin-right: -1px;
+    border-right: 1px solid #ffffff26;
+    .owl-dots{
+        display: none;
+    }
+    .image {
+        position: relative;
+        padding: 64px 30px 64px;
+        overflow: hidden;
+        text-align: center;
+        border-radius: 10px;
+        @include flex-center;
+        @include transition(all 300ms ease);
+        &:hover{
+            img {
+                &:first-child{
+                    transform: translateY(0) scaleY(1);
+                    opacity: 1;
+                    filter: blur(0);
+                }
+                &:nth-child(2){
+                    transform: translateY(-50%) scaleY(2);
+                    opacity: 0;
+                    filter: blur(10px);
+                }
+            }
+        }
+    }
+    img{
+        position:relative;
+        width: auto !important;
+        display: inline-block !important;
+        @include transition(all 500ms ease);
+        &:first-child{
+            position:absolute;
+            left:0px;
+            right:0px;
+            top:0px;
+            bottom:0px;
+            z-index:1;
+            margin: auto;
+            transform: translateY(50%) scaleY(2);
+            opacity: 0;
+            filter: blur(10px);
+        }
+    }
+}
+
+
+
+
+
+
+/*** 
+
+====================================================================
+    Clients Section Two
+====================================================================
+
+***/
+
+.clients-section-two{
+    position: relative;
+    margin-top: 15px;
+    z-index: 1;
+    .text{
+        text-align: center;
+        font-family: var(--title-font2);
+        text-transform: uppercase;
+        background-color: var(--theme-color-light);
+        width: 190px;
+        margin: 0 auto;
+        position: relative;
+        top: 11px;
+        z-index: 1;
+    }
+    .icon-wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @include media-breakpoint-down(xl){
+            display: none;
+        }
+    }
+    &.style-two {
+        .icon-lines-6 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .sponsors-outer {
+            padding: 80px 0 70px;
+        }
+    }
+    .clients-carousel {
+        z-index: 10;
+    }
+    .outer-box {
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            width: 100%;
+            background-color: #dfdfdf;
+        }
+    }
+    .sponsors-outer{
+        padding: 80px 0px 0;
+    }
+}
+
+.client-block-two{
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    &:hover {
+        a {
+            opacity: 1;
+        }
+    }
+    a {
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        opacity: .2;
+        @include transition(all 300ms ease);
+    }
+    img {
+        display: inline-block;
+        width: auto;
+    }
+}
+
+
+
+
+/*** 
+
+====================================================================
+    client section Three
+====================================================================
+
+***/
+
+.client-section-three{
+    position: relative;
+    background-color: #0f0d1b;
+    margin-top: -2px;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 195px;
+        height: 102%;
+        background-color: var(--theme-color-light);
+    }
+    .outer-box{
+        padding: 120px 0;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../images/icons/map.jpg);
+        }
+        .image-block{
+            .inner-box{
+                position: relative;
+                z-index: 99;
+            }
+        }
+    }
+}
+

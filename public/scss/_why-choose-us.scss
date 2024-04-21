@@ -1,0 +1,416 @@
+/*** 
+
+====================================================================
+    Why Choose us
+====================================================================
+
+***/
+
+.why-choose-us {
+    position: relative;
+    padding: 120px 0 55px;
+    .bg {
+        top: -280px;
+        bottom: 0;
+        height: auto;
+        &:before {
+            content: '';
+            @include overlay;
+            background-color: #13131c;
+            opacity: .7;
+        }
+    }
+
+    .content-column {
+        margin-bottom: 50px;
+        .inner-column {
+            position: relative;
+            padding-top: 25px;
+            padding-right: 95px;
+            @include media-breakpoint-down(xxl){
+                padding-right: 0;
+            }
+            .sec-title {
+                margin-bottom: 30px;
+            }
+            .skills {
+                .skill-title {
+                    font-weight: 400;
+                }
+            }
+            .info-btn-three {
+                margin-top: 40px;
+                padding-left: 70px;
+                .icon {
+                    color: var(--theme-color1);
+                    font-size: 55px;
+                }
+            }
+        }
+    }
+
+    .image-column {
+        margin-bottom: 50px;
+        .inner-column {
+            position: relative;
+            padding-left: 125px;
+            @include media-breakpoint-down(lg){padding-left: 0;}
+            .image {
+                position: relative;
+                margin-bottom: 0;
+                margin-right: -365px;
+                @include media-breakpoint-down(lg){margin-right: 0;}
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 22px;
+                    left: -18px;
+                    width: 18px;
+                    height: 543px;
+                    background-color: var(--theme-color2);
+                    @include media-breakpoint-down(xl){
+                        top: 0;
+                    }
+                    @include media-breakpoint-down(lg){
+                        display: none;
+                    }
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    min-height: 300px;
+                    object-fit: cover;
+                }
+            }
+            .video-box {
+                position: absolute;
+                top: 0;
+                left: 1px;
+                @include media-breakpoint-down(lg){
+                    left: 0
+                }
+                .btn-box {
+                    @include flex-center;
+                    width: 124px;
+                    height: 152px;
+                    background-color: var(--theme-color1);
+                    @include media-breakpoint-down(sm){
+                        width: 100px;
+                        height: 100px;
+                    }
+                    .icon {
+                        position: relative;
+                        @include flex-center;
+                        color: var(--theme-color-light);
+                        width: 79px;
+                        height: 79px;
+                        line-height: 79px;
+                        font-size: 15px;
+                        border-radius: 50%;
+                        margin: 0 auto;
+                        background-color: transparent;
+                        border: 2px solid var(--theme-color-light);
+                        @include transition(all 300ms ease);
+                        @include media-breakpoint-down(sm){
+                            width: 65px;
+                            height: 65px;
+                            line-height: 65px;
+                        }
+                        &:hover {
+                            background-color: var(--theme-color-light);
+                            color: var(--theme-color1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/*** 
+
+====================================================================
+    Why Choose Us Two
+====================================================================
+
+***/
+
+.why-choose-us-two{
+  position: relative;
+  padding: 120px 0 60px;
+  z-index: 2;
+  .line-background {
+    position: absolute;
+    left: 54%;
+    transform: translate(-50%);
+  }
+  .sec-title{
+    margin-bottom: 45px;
+  }
+  .owl-carousel{
+    padding-bottom: 10px;
+    .feature-block-three{
+      padding:0 15px 15px;
+    }
+    .owl-nav{display: none;}
+    .owl-dots{
+      display: none;
+      .owl-dot{
+        border-color: var(--theme-color1);
+        &.active{background-color: var(--bg-theme-color1);}
+      }
+    }
+  }
+}
+
+/*** 
+
+====================================================================
+    why Choose Section
+====================================================================
+
+***/
+
+.why-choose-three {
+  position: relative;
+  padding: 120px 0 0px;
+  height: 680px;
+  background-color: var(--theme-color5);
+  z-index: 2;
+  @include media-breakpoint-down(xl){
+    height: auto;
+  }
+  @include media-breakpoint-down(lg){
+    padding-top: 0;
+  }
+  .sec-title{
+    margin-bottom: 50px;
+    .text {
+      margin-top: 30px;
+    }
+  }
+  .icon-plane-2{
+    position: absolute;
+    right: 14%;
+    top: 81px;
+  }
+
+  .content-column{
+    .inner-column{
+      padding-top: 90px;
+      @include media-breakpoint-down(xl){
+        padding-top: 50px;
+      }
+      .sec-title{
+        margin-bottom: 60px;
+        margin-right: -200px;
+        @include media-breakpoint-down(xl){
+          margin-right: 0;
+          margin-bottom: 40px;
+        }
+        .sub-title{
+          margin-bottom:6px;
+        }
+        h2{
+          font-size:50px;
+          @include title;
+          @include media-breakpoint-down(xl){
+            margin-right: -200px;
+            br {
+              display: none;
+            }
+          }
+          @include media-breakpoint-down(lg){
+            margin-right: 0;
+            font-size: 40px;
+          }
+        }
+        .text {
+          @include media-breakpoint-down(xl){
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+      .inner-box{
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-left: 120px;
+        margin-bottom: 50px;
+        @include media-breakpoint-down(xl){
+          padding-left: 120px;
+        }
+        @include media-breakpoint-down(sm){
+          flex-direction: column;
+          padding-left: 0;
+          text-align: center;
+        }
+        &:hover{
+          .icon{
+            transform: scaleX(-1);
+            color: var(--theme-color-light);
+            background: var(--theme-color1);
+            &:after {
+              border-color: var(--theme-color1);
+            }
+          }
+        }
+        .icon{
+          background-color: var(--theme-color1);
+          color: var(--theme-color-light);
+          display: block;
+          font-size: 40px;
+          height: 83px;
+          left: 0px;
+          line-height: 83px;
+          position: absolute;
+          top: 7px;
+          text-align: center;
+          width: 83px;
+          transition: all 300ms ease;
+          z-index: 3;
+          @include media-breakpoint-down(sm){
+            margin-bottom: 20px;
+            position: relative;
+            top: 0;
+          }
+        }
+        .title {
+          font-family: var(--title-font2);
+          font-size: 24px;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+        .text {
+          font-family: var(--title-font2);
+          @include media-breakpoint-down(xxl){
+            font-size: 14;
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .image-column {
+    position: relative;
+    @include media-breakpoint-down(xl){
+      margin-bottom: 50px;
+    }
+    @include media-breakpoint-down(sm){
+      display: none;
+    }
+    .inner-column{
+      position: relative;
+      margin-left: -310px;
+      position: relative;
+      margin-bottom: -62px;
+      z-index: 3;
+      @media (max-width: 1500px) {
+        margin-left: -70px;
+      }
+      @include media-breakpoint-down(xxl){
+        margin-left: 0px;
+      }
+      .image{
+        overflow: hidden;
+        img{
+          filter: grayscale(2);
+          @include media-breakpoint-down(xxl){
+            height: 617px;
+          }
+          @include media-breakpoint-down(xl){
+            height: auto;
+          }
+        }
+      }
+      &::before{
+        background-color: var(--theme-color1);
+        bottom: 14px;
+        content: "";
+        clip-path: polygon(0 0, 0% 100%, 100% 100%);
+        height: 563px;
+        left: 0px;
+        position: absolute;
+        width: 420px;
+        z-index: 3;
+        @include media-breakpoint-down(xxl){
+          bottom: 13px;
+          left: 0;
+        }
+        @include media-breakpoint-down(xl){
+          bottom: 14px;
+          left: 0;
+        }
+        @include media-breakpoint-down(lg){
+          display: none;
+        }
+        @include media-breakpoint-down(lg){
+          width: 100%;
+        }
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 98%;
+        width: 91%;
+        background-color: #161617ad;
+        z-index: 1;
+        @media (max-width: 1500px) {
+          height: 97.6%;
+          width: 100%;
+        }
+        @media (max-width: 1199px) {
+          height: 98%;
+          width: 74%;
+        }
+        @include media-breakpoint-down(xl){
+          width: 86.7%;
+        }
+        @include media-breakpoint-down(lg){
+          width: 100%;
+        }
+        @include media-breakpoint-down(lg){
+          height: 97.5%
+        }
+      }
+      @include media-breakpoint-down(xl){
+        margin-top: 50px;
+      }
+      .info-box{
+        display: inline-block;
+        position: absolute;
+        bottom: 43px;
+        left: 60px;
+        z-index: 4;
+        @include media-breakpoint-down(xxl){
+          left: 67px;
+        }
+        @include media-breakpoint-down(lg){
+          left: 37px;
+        }
+        img{
+          margin-bottom: 30px;
+        }            
+        img{
+          position: relative;
+        }
+        h4{
+          font-family: var(--title-font2);
+          color: var(--theme-color-light);
+          font-size: 34px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

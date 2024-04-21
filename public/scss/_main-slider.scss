@@ -1,0 +1,134 @@
+/*** 
+
+====================================================================
+  Main Slider
+====================================================================
+
+***/
+
+.main-slider {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  .tparrows{
+    width: 60px;
+    height: 180px;
+    background-color: #ffffff13;
+    margin-top: -100px;
+    &::before{
+      font-family: revicons;
+      font-size: 15px;
+      color: #fff;
+      display: block;
+      line-height: 177px;
+      text-align: center;
+    }
+  }
+  .sub-title{
+    position: relative;
+    display: block;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 3px;
+    @include title-font;
+    font-weight: 400;
+    color: var(--theme-color-light);
+    z-index: 3;
+    text-transform: uppercase;
+    @include media-breakpoint-down(xxl){
+      margin-left: 71px;
+    }
+    @include media-breakpoint-down(xl){
+      margin-left: 10px;
+    }
+    &::before{
+      content: "";
+      position: absolute;
+      background-image: url(../images/icons/line.png);
+      background-repeat: no-repeat;
+      bottom: -7px;
+      width:300px;
+      height: 8px;
+      left:23px;
+    }
+    }
+  h1{
+    position: relative;
+    display: block;
+    font-size: 100px;
+    line-height: 110px;
+    font-weight: 700;
+    color: var(--theme-color-light);
+    z-index: 3;
+    text-transform: uppercase;
+    @include media-breakpoint-down(xxl){
+      margin-left: 71px;
+      font-size: 86px;
+      line-height:91px;
+    }
+    @include media-breakpoint-down(xl){
+      margin-top: 71px;
+    }
+    @include media-breakpoint-down(lg){
+      font-size: 75px;
+      line-height: 85px;
+      margin-top: 33px;
+      margin-left: 0px;
+    }
+    @include media-breakpoint-down(sm){
+      font-size: 60px;
+      line-height: 70px;
+    }
+    @include for-xs {
+      font-size: 60px;
+    }
+    @include for-xxs{
+      font-size: 50px;
+    }
+  }
+  .theme-btn{
+    @include media-breakpoint-down(xxl){
+      margin-left: 71px;
+    }
+    @include media-breakpoint-down(xl){
+      margin-top: 266px;
+    }
+    @include media-breakpoint-down(lg){
+      margin-top: 206px;
+      margin-left: 0px;
+    }
+    @include media-breakpoint-down(md){
+      line-height: 20px;
+      margin-top: 176px;
+    }
+    @include media-breakpoint-down(sm){
+      line-height: 20px;
+      padding: 10px 30px;
+    }
+  }
+
+  .tp-dottedoverlay{
+    background-color: rgb(0 0 0 / 68%);
+    background-size: cover;
+    &::before{
+      content: "";
+      position: absolute;
+      background-image: url(../images/main-slider/shap-2.png);
+      width: 672px;
+      height: 966px;
+      right: 0;
+      top: 0;
+      z-index: 99;
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      background-image: url(../images/main-slider/shap-3.png);
+      width: 686px;
+      height: 740px;
+      left: 178px;
+      top: 139px;
+      z-index: 99;
+    }
+  }
+}

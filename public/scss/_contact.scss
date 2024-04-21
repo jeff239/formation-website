@@ -1,0 +1,366 @@
+/*** 
+
+====================================================================
+    Contact Section Two
+====================================================================
+
+***/
+
+.contact-section-two{
+    position: relative;
+    padding: 100px 0px;
+    z-index: 2;
+    overflow: hidden;
+    @include media-breakpoint-down(xxl){
+        padding: 100px 0px 80px;
+    }
+
+    .shap-image {
+        position: absolute;
+        right: 0;
+        bottom: 0px;
+        filter: grayscale(2);
+        @include media-breakpoint-down(xxl){
+            display: none;
+        }
+    }
+
+    .bg-background-4{
+        &::before{
+            content: "";
+            @include overlay;
+            @include background;
+            background-color: var(--theme-color2);
+            opacity: 0.9;
+        }
+        &::after{
+            content: "";
+            @include overlay;
+            @include background;
+            background-image: url(../images/background/12.png);
+            top: 0;
+            left: -479px;
+            height: 100%;
+            width: 154%;
+            z-index: 1;
+        }
+    }
+    .outer-box{
+        position: relative;
+        &::before{
+            @include overlay;
+            background-color: var(--theme-color-gray);
+            width: 1000%;
+            content: "";
+            @include media-breakpoint-down(lg){
+                width: auto;
+                left: -20px;
+                right: -20px;
+            }
+        }
+    }
+    .form-column{
+        position: relative;
+        z-index: 3;
+        .inner-column{
+            position: relative;
+            margin-left: -47px;
+            padding-right: 30px;
+            @include media-breakpoint-down(xxl){
+                margin-left: 0;
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    .faq-column{
+        &.style-two{
+            .sec-title-two{
+                margin-bottom: 40px;
+                @include media-breakpoint-down(lg){
+                    text-align: center;
+                }
+                h2{
+                    color: var(--theme-color-light);
+                    line-height: 53px;
+                }
+            }
+            .accordion-box{
+                .block{
+                    background-color: #ffffff0f;
+                    border: none;
+                    border-radius: 0px;
+                    .acc-btn{
+                        background-color: #ffffff00;
+                        color: var(--theme-color-light);
+                        font-family: var(--title-font2);
+                        font-weight: 500;
+                        font-size: 16px;
+                        border: none;
+                        border-radius: 0px;
+                        .active{
+                            padding: 26px 40px 23px;
+                        }
+                    }
+                    .acc-content{
+                        .content{
+                            border: none;
+                            .text{
+                                color: #aca9a9;
+                                font-family: var(--title-font2);
+                                letter-spacing: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Contact Form Two
+.contact-form-two{
+    position: relative;
+    background-color: var(--theme-color-light);
+    padding: 50px 40px;
+    border-top: 6px solid var(--theme-color1);
+    .form-group {
+        position: relative;
+        margin-bottom: 14px;
+        padding: 0px 7px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .select2-container--default .select2-selection--single,
+    input:not([type="submit"]),
+    textarea,
+    select {
+        position: relative;
+        display: block;
+        height: 72px;
+        width: 100%;
+        padding: 20px 20px;
+        font-size: var(--body-font-size);
+        color: var(--theme-colro2);
+        line-height: 32px;
+        font-family: var(--title-font2);
+        font-weight: 400;
+        background-color: #f6f6f6;
+        border: 1px solid transparent;
+        margin-bottom: 0;
+        transition: all 300ms ease;
+    }
+    ::-webkit-input-placeholder {color: #67687A;}
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border-color: var(--theme-color2);
+    }
+    textarea {
+        height: 187px;
+        resize: none;
+    }
+    input[type="submit"],
+    button {
+        font-family: var(--title-font2);
+        font-size: 16px;
+        width: 100%;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1.2;
+        padding: 20px 30px;
+        text-transform: uppercase;
+        width: 256px;
+        @include media-breakpoint-down(sm){
+            width: 220px;
+        }
+    }
+}
+
+
+
+
+
+
+
+/*** 
+
+====================================================================
+	contact section Three
+====================================================================
+
+***/
+
+.contact-section-three{
+    position: relative;
+    padding: 120px 0;
+    .bg{
+        background-image: url(../images/background/17.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: cover;
+        height: 442px;
+    }
+    .inner-container{
+        max-width: 1320px;
+        margin: 0 auto;
+    }
+    .outer-box{
+        position: relative;
+        background-image: url(../images/background/15.jpg);
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 93px 59px 97px;
+        @include media-breakpoint-down(lg){
+            padding: 78px 59px 53px;
+        }
+    }
+    .image-column {
+        .inner-column{
+            position: absolute;
+            bottom: 0;
+            right: 63px;
+            @include media-breakpoint-down(lg){
+                display: none;
+            }
+            .image{
+                margin-bottom: 0px;
+                img{
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+    .form-column{
+        @include media-breakpoint-down(lg){
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.contact-form-three {
+    position: relative;
+    border-radius: 10px;
+    .sec-title-two{
+        margin-bottom: 33px;
+
+        h2{
+            font-size: 50px;
+            color: var(--theme-color-light);
+            @include media-breakpoint-down(xl){
+                font-size: 44px;
+            }
+            @include media-breakpoint-down(md){
+                font-size: 42px;
+            }
+            @include media-breakpoint-down(sm){
+                font-size: 23px;
+                line-height: 30px;
+            }
+        }
+    }
+    .theme-btn {
+        &:before {
+            border-radius: 4px;
+        }
+    }
+    .input-outer {
+        position: relative;
+        .icon{
+            position: absolute;
+            right: 30px;
+            top: 23px;
+            font-size: 16px;
+            line-height: 1em;
+            color: var(--theme-color1);
+        }
+    }
+    .form-group {
+        position: relative;
+        margin-bottom: 20px;
+        padding: 0 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .select2-container--default .select2-selection--single,
+    input:not([type="submit"]),
+    textarea,
+    select {
+        position: relative;
+        display: block;
+        height: 58px;
+        width: 100%;
+        padding: 0px 21px;
+        font-size: 16px;
+        color: var(--theme-color-light);
+        line-height: 58px;
+        background-color: #272632;
+        border: 1px solid transparent;
+        margin-bottom: 0;
+        transition: all 300ms ease;
+        font-family: var(--title-font);
+        &::placeholder{
+            color: var(--theme-color-light);
+        }
+    }
+    ::-webkit-input-placeholder {color: #67687A;}
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border-color: var(--theme-color2);
+    }
+    textarea {
+        height: 150px;
+        resize: none;
+    }
+    input[type="submit"] {
+        width: 200px;
+        font-weight: 600;
+        line-height: 32px;
+        padding: 15px 30px;
+        text-transform: capitalize;
+        border-radius: 5px;
+        border: 0;
+        background-color: var(--theme-color1);
+        color: var(--theme-color-light);
+        font-family: var(--title-font)2;
+    }
+    .theme-btn {
+        padding: 0 40px;
+        line-height: 70px;
+        height: 70px;
+        text-transform: capitalize;
+        border-radius: 4px;
+        margin-top: 6px;
+        background-color: var(--theme-color1);
+        color: var(--theme-color-light);
+        font-family: var(--title-font2);
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    &.style-two{
+        .select2-container--default .select2-selection--single,
+        input:not([type="submit"]),
+        textarea,
+        select {
+            height: 65px;
+            padding: 20px 30px;
+            line-height: 25px;
+        }
+        .input-outer {
+            .icon {
+                top: 20px;
+                line-height: 25px;
+            }
+        }
+        textarea {
+            height: 157px;
+            resize: none;
+        }
+    }
+}

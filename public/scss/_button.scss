@@ -1,0 +1,87 @@
+.theme-btn{
+    display:inline-flex;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    transition:all 0.3s ease;
+    @include title-font;
+    .btn-title {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/*Btn Style One*/
+.btn-style-one {
+    position: relative;
+    font-size: 14px;
+    line-height: 27px;
+    padding: 21px 57px;
+    font-weight: 700;
+    overflow: hidden;
+    color: var(--theme-color-light);
+    letter-spacing: 1px;
+    background: var(--theme-color1);
+    text-transform: uppercase;
+    i{
+        position: relative;
+        display: block;
+        margin-left: 5px;
+    }
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        content: "";
+        background-color: var(--theme-color2);
+        transform: scale(0, 1);
+        pointer-events: none;
+        transform-origin: top right;
+        transition: -webkit-transform 500ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
+        transition: transform 500ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
+        transition: transform 500ms cubic-bezier(0.860, 0.000, 0.070, 1.000), -webkit-transform 500ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
+        transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    }
+    .btn-title {
+        position: relative;
+    }
+    &:hover:before {
+        transform: scale(1, 1);
+        transform-origin: bottom left;
+    }
+    &:hover {
+        color: var(--theme-color-light);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+    }
+    &.dark-bg{
+        background-color: var(--theme-color-dark);
+        &::before{background-color: var(--theme-color2);}
+    }
+    &.light-bg{
+        background-color: var(--theme-color-light);
+        color: var(--theme-color-dark);
+        &:hover{color: var(--theme-color-light);}
+        &::before{background-color: var(--theme-color-dark);}
+    }
+    &.bg-orange {
+        background-color: var(--theme-color2);
+        &:before {
+            background-color: var(--theme-color1);
+        }
+    }
+    &.hover-light{
+        &:hover{color: var(--theme-color2);}
+        &:before {background-color: var(--theme-color-light);}
+    }
+    &.hover-dark{
+        &:hover{color: var(--theme-color-light);}
+        &:before {background-color: var(--theme-color-dark);}
+    }
+    &.hover-one{
+        &:hover{color: var(--theme-color-light);}
+        &:before {background-color: var(--theme-color1);}
+    }
+}

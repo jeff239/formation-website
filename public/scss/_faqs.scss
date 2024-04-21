@@ -1,0 +1,246 @@
+/*** 
+
+====================================================================
+		FAQ's Sectiom
+====================================================================
+
+***/
+
+.faqs-section {
+    position: relative;
+    padding: 120px 0 50px;
+    background-color: var(--bg-theme-color3);
+    .sec-title{
+        .text{
+            margin-top: 20px;
+        }
+    }
+    
+    .faq-column {
+        position: relative;
+        margin-bottom: 50px;
+        .inner-column {
+            position: relative;
+            padding-right: 10px;
+        }
+    }
+
+    .image-column{
+        .inner-column{
+            position: relative;
+            padding-right: 220px;
+        }
+        .image{
+            position: relative;
+            img{
+                height: 490px;
+                filter: grayscale(2);
+            }
+        }
+    }
+
+    .graph-box{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 220px;
+        text-align: center;
+        background-color: var(--theme-color-light);
+        padding: 26px 30px;
+    }
+}
+
+.pie-graph {
+    position: relative;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #0000000a;
+    &:last-child{
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+    .graph-outer{
+        position: relative;
+        @include flex-center;
+        margin-bottom: 15px;
+        .inner-text{
+            @include overlay;
+            @include flex-center;
+            font-size: 24px;
+            color: var(--theme-color2);
+            font-weight: 400;
+            line-height: 1em;
+        }
+    }
+    .title{
+        font-size: 18px;
+        line-height: 27px;
+        margin-bottom: 0;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+}
+
+.accordion-box {
+    position: relative;
+    z-index:3;
+    .block {
+        position: relative;
+        background-color: #ffffff;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        &.active-block{
+            box-shadow: 0 10px 60px rgba(0, 0, 0, .07);
+            border-bottom: none;
+        }
+        .acc-btn {
+            position: relative;
+            font-size: 16px;
+            line-height: 25px;
+            background-color: #fff;
+            text-transform: uppercase;
+            color: var(--theme-color-dark);
+            font-weight: 700;
+            cursor: pointer;
+            padding: 21px 40px;
+            padding-right: 70px;
+            letter-spacing: 1px;
+            border: 1px solid #e2e2e2;
+            overflow: hidden;
+            transition: all 500ms ease;
+            margin-bottom: 0px;
+            @include media-breakpoint-down(xl){
+                font-size: 13px;
+            }
+            .fa-angle-down{
+                &::before{
+                    position: absolute;
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #9b9aa2;
+                    transform: translate(1px, 12px);
+                 }
+                 &:after{
+                    position: absolute;
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    border: 1px solid #9b9aa2;
+                    transform: translate(-4px, 7px);
+                }
+            }
+            .icon {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                height: 35px;
+                width: 35px;
+                font-size: 18px;
+                line-height: 35px;
+                text-align: center;
+                color: var(--theme-color1);
+                transition: all 500ms ease;
+            }
+            &.active {
+                color: var(--theme-color2);
+                background-color: #ffffff;
+                border-bottom: none;
+                padding: 21px 40px 16px;
+                .icon {
+                    color: var(--theme-color2);
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: var(--theme-color1);
+                        transform: translate(1px, 12px);
+                    }
+                    &:after{
+                        position: absolute;
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        border: 1px solid var(--theme-color1);
+                        transform: translate(-4px, 7px);
+                    }
+                }
+            }
+        }
+        .acc-content {
+            position: relative;
+            display: none;
+            .content {
+                position: relative;
+                padding: 7px 40px 26px;
+                border: 1px solid #e2e2e2;
+                border-top: 0;
+                .text {
+                    display: block;
+                    color: #808287;
+                    margin-bottom: 0;
+                    letter-spacing: 1px;
+                    @include media-breakpoint-down(xl){
+                        font-size: 11px;
+                        line-height: 20px;
+                    }
+                    br{
+                        @include media-breakpoint-down(xxl){
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            &.current {
+                display: block;
+            }
+        }
+    }
+    &.style-two{
+        counter-reset: count;
+        margin-top: 20px;
+        .block{
+            margin-bottom: 10px;
+            .acc-btn{
+                padding-left: 55px;
+                text-transform: uppercase;
+                font-size: 16px;
+                border-bottom: 0;
+                color: var(--theme-color1);
+                &:before{
+                    position: absolute;
+                    left: 35px;
+                    top: 0;
+                    font-size: 16px;
+                    line-height: 25px;
+                    padding: 25px 0;
+                    color: var(--theme-color2);
+                    content: "";
+                    z-index: 2;
+                    counter-increment: count;
+                    content: counter(count) ".";
+                }
+                .icon{
+                    font-size: 14px;
+                    color: var(--theme-color2);
+                }
+                &.active {
+                    .icon {
+                        color: var(--theme-color1);
+                    }
+                }
+            }
+            .content {
+                padding-top: 0;
+            }
+        }
+    }
+}

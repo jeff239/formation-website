@@ -1,0 +1,101 @@
+/*** 
+
+====================================================================
+	fu-fact section
+====================================================================
+
+***/
+.fun-fact-section{
+  position: relative;
+  padding: 120px 0;
+  .outer-box{
+    background-color: var(--theme-color1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 0 0 50px 50px;
+    object-fit: cover;
+    padding: 62px 0 26px;
+  }
+}
+
+.counter-block{
+  margin-bottom: 30px;
+  position: relative;
+  &:last-child{
+    .inner{
+      margin-right: 0;
+      &::before{
+        display: none;
+      }
+    }
+  }
+  .inner {
+    border-radius: 10px;
+    height: 100%;
+    min-height: 104px;
+    position: relative;
+    text-align: center;
+    transition: all 300ms ease;
+    &::before{
+      background-color: #5583fc;
+      content: "";
+      height: 220px;
+      position: absolute;
+      top: -35px;
+      right: -12px;
+      width: 1px;
+    }
+    &:hover{
+      img{
+        transform: scale(-1) rotate(180deg);
+      }
+    }
+    @include media-breakpoint-down(xl) {
+      padding-top: 0;
+    }
+  }
+  .image-box{
+    background-color: var(--theme-color-light);
+    height: 79px;
+    line-height: 79px;
+    margin: 0 auto 9px;
+    text-align: center;
+    width: 83px;
+    @include media-breakpoint-down(xl){
+      font-size: 14px;
+    }
+    img {
+      transition: all 300ms ease;
+    }
+  }
+  .count-box {
+    color: var(--theme-color-light);
+    font-size: 36px;
+    font-weight: 500;
+    font-family: var( --title-font2);
+    letter-spacing: -1.92px;
+    line-height: 58px;
+    margin-bottom: 13px;
+    position: relative;
+    .count-text {
+      font-size: 36px;
+      line-height: 58px;
+      font-weight: 500;
+      font-family: var( --title-font2);
+      color: var(--theme-color-light);
+    }
+  }
+  .counter-title {
+    color: var(--theme-color-light);
+    font-family: var(--text-font);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: 0;
+    margin-top: -9px;
+    text-transform: uppercase;
+    @include media-breakpoint-down(xl){
+      font-size: 14px;
+    }
+  }
+}

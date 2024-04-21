@@ -1,0 +1,174 @@
+
+/***
+
+====================================================================
+    Marquee Section
+====================================================================
+
+***/
+
+.marquee-section {
+    position: relative;
+    z-index: 3;
+    &.pull-up{
+        margin-top: -80px;
+    
+    }
+    .text-title{
+        margin-bottom: 50px;
+        font-size: 16px;
+        color: #726d7b;
+        @include media-breakpoint-down(lg){
+            display: none;
+        }
+        b{
+            color: var(--theme-color2);
+        }
+    }
+    .marquee {
+        background-color: var(--theme-color1);
+        padding: 30px 0;
+        position: relative;
+        --duration: 30s;
+        --gap: 0px;
+        display: flex;
+        overflow: hidden;
+        user-select: none;
+        gap: var(--gap);
+        .marquee-group {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: var(--gap);
+            min-width: 100%;
+            animation: scroll var(--duration) linear infinite;
+        }
+        .text {
+            position: relative;
+            color: var(--theme-color-light);
+            font-weight: 500;
+            padding: 0 30px;
+            font-family: var(--style-font);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            @include title-font;
+            &:before {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                top: 8px;
+                left: 5px;
+                line-height: 1em;
+                font-size: 35px;
+                color: var(--theme-color-light);
+                content: "*";
+                @include media-breakpoint-down(sm){
+                    left: -12px;
+                }
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .marquee-group {
+                animation-play-state: play;
+            }
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-100% - var(--gap)));
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+/***
+
+====================================================================
+    Marquee Section Two
+====================================================================
+
+***/
+
+.marquee-section-two {
+    position: relative;
+    padding: 36px 0;
+    background: var(--theme-color2);
+    border-top: 1px solid;
+
+    &.style-two{
+        background-color: var(--theme-color1);
+        .marquee{
+            .text{
+                color: var(--theme-color-light);
+                &:before{
+                    color: var(--theme-color-light);
+                }
+            }
+        }
+    }
+
+    .marquee {
+        position: relative;
+        --duration: 30s;
+        --gap: 0px;
+        display: flex;
+        overflow: hidden;
+        user-select: none;
+        gap: var(--gap);
+        .marquee-group {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: var(--gap);
+            min-width: 100%;
+            animation: scroll var(--duration) linear infinite;
+        }
+        .text {
+            position: relative;
+            color: var(--theme-color1);
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 36px;
+            padding: 0 30px;
+            font-family: var(--title-font2);
+            text-transform: uppercase;
+            &:before {
+                @include overlay;
+                top: 4px;
+                left: -20px;
+                line-height: 1em;
+                font-size: 50px;
+                color: var(--theme-color1);
+                content: "*";
+                @include media-breakpoint-down(sm){
+                    left: -12px;
+                }
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .marquee-group {
+                animation-play-state: play;
+            }
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-100% - var(--gap)));
+            }
+        }
+    }
+}
