@@ -11,7 +11,7 @@
                             <ul>
                                 @foreach($listFormations as $element)
                                     <li @class(['current' => $element->title == $formation->title])>
-                                        <a href="page-service-details.html" class="current">
+                                        <a href={{ route('formationDetails', ['formation' => $element->slug] ) }} >
                                             <i class="fas fa-angle-right"></i>
                                             <span>{{ $element->title }}</span>
                                         </a>

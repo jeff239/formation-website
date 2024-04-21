@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href={{ asset("css/slick-theme.css") }}>
     <link rel="stylesheet" type="text/css" href={{ asset("css/slick.css") }}>
 
-    <link rel="shortcut icon" href={{ asset("images/favicon.png") }} type="image/x-icon">
-    <link rel="icon" href={{ asset("images/favicon.png") }} type="image/x-icon">
+    <link rel="shortcut icon" href={{ asset("storage/01HW0FAXYRB67BP5GYTBF7QYRC.jpg") }} type="image/x-icon">
+    <link rel="icon" href={{ asset("storage/01HW0FAXYRB67BP5GYTBF7QYRC.jpg") }} type="image/x-icon">
 
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

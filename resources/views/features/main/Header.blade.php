@@ -6,7 +6,9 @@
         <!-- Main box -->
         <div class="main-box">
             <div class="logo-box">
-                <div class="logo"><a href={{ route('accueil') }}><img src={{ asset("images/logo.png") }} alt="" title="Tronis"></a></div>
+                <div class="logo"><a href={{ route('accueil') }}>
+                        <img src={{ asset("storage/01HW0FAXYRB67BP5GYTBF7QYRC.jpg") }} alt="" title="Tronis" width="100"></a>
+                </div>
             </div>
 
             <!--Nav Box-->
@@ -116,8 +118,8 @@
             <div class="inner-container">
                 <!--Logo-->
                 <div class="logo">
-                    <a href={{ route('accueil') }}><img src="{{ asset("images/favicon.png") }}" alt=""></a>
-                    <h3><a href={{ route('accueil') }} class="logo-t">MINIOR</a></h3>
+                    <a href={{ route('accueil') }}><img src={{ asset("storage/01HW0FAXYRB67BP5GYTBF7QYRC.jpg") }} alt=""></a>
+                    <h3><a href={{ route('accueil') }} class="logo-t">SHARK TECHNOLOGYS</a></h3>
                 </div>
 
                 <!--Right Col-->
