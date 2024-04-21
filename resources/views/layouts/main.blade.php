@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Minior | It Solution HTML Template | Home Page 01</title>
+    <title>SHARK TECHNOLOGYS</title>
     <!-- Stylesheets -->
     <link href={{ asset("css/bootstrap.min.css") }} rel="stylesheet">
     <link href={{ asset("css/style.css") }} rel="stylesheet">
