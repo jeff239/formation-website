@@ -70,53 +70,23 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
                     <div class="innerpage mt-25">
-                        <h3>Frequently Asked Question</h3>
-                        <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        <h3>Questions posées frequemment</h3>
                         <ul class="accordion-box wow fadeInRight">
-                            <!--Block-->
-                            <li class="accordion block">
-                                <div class="acc-btn">Is my technology allowed on tech?
-                                    <div class="icon fa fa-plus"></div>
-                                </div>
-                                <div class="acc-content">
-                                    <div class="content">
-                                        <div class="text">There are many variations of passages the majority have suffered alteration in some fo injected humour, or randomised words believable.</div>
+                            <!--Block active-block-->
+                            @foreach($questions as $question)
+                                <li class="accordion block">
+                                    <div class="acc-btn"> {{ $question->title }}
+                                        <div class="icon fa fa-plus"></div>
                                     </div>
-                                </div>
-                            </li>
-                            <!--Block-->
-                            <li class="accordion block active-block">
-                                <div class="acc-btn active">How to soft launch your business?
-                                    <div class="icon fa fa-plus"></div>
-                                </div>
-                                <div class="acc-content current">
-                                    <div class="content">
-                                        <div class="text">There are many variations of passages the majority have suffered alteration in some fo injected humour, or randomised words believable.</div>
+                                    <div class="acc-content">
+                                        <div class="content">
+                                            <div class="text">{{ $question->content }}</div>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
+
                             <!--Block-->
-                            <li class="accordion block">
-                                <div class="acc-btn">How to turn visitors into contributors
-                                    <div class="icon fa fa-plus"></div>
-                                </div>
-                                <div class="acc-content">
-                                    <div class="content">
-                                        <div class="text">There are many variations of passages the majority have suffered alteration in some fo injected humour, or randomised words believable.</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!--Block-->
-                            <li class="accordion block">
-                                <div class="acc-btn">How can i find my solutions?
-                                    <div class="icon fa fa-plus"></div>
-                                </div>
-                                <div class="acc-content">
-                                    <div class="content">
-                                        <div class="text">There are many variations of passages the majority have suffered alteration in some fo injected humour, or randomised words believable.</div>
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
                     </div>
                 </div>

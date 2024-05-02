@@ -5,7 +5,7 @@
             <div class="col-xl-8 col-lg-7">
                 <div class="blog-details__left">
                     <div class="blog-details__img">
-                        <img src="https://via.placeholder.com/1024x683" alt="">
+                        <img src={{ asset(sprintf('storage/%s',$publication->image)) }} alt="">
                         <div class="blog-details__date">
                             <span class="day">{{ \Carbon\Carbon::parse($publication->created_at)->format('d') }}</span>
                             <span class="month">{{ \Carbon\Carbon::parse($publication->created_at)->format('M') }}</span>
@@ -13,7 +13,7 @@
                     </div>
                     <div class="blog-details__content">
                         <ul class="list-unstyled blog-details__meta">
-                            <li><a href="news-details.html"><i class="fas fa-user-circle"></i> Admin</a> </li>
+                            <li><i class="fas fa-user-circle"></i> {{ $publication->author }} </li>
 {{--                            <li>--}}
 {{--                                <a href="news-details.html"><i class="fas fa-comments"></i> 02 Comments</a>--}}
 {{--                            </li>--}}
@@ -34,51 +34,54 @@
 {{--                            <a href="news-details.html" rel="next">How to lead a healthy &amp; well-balanced life</a>--}}
 {{--                        </div>--}}
 {{--                    </div>--}}
-{{--                    <div class="comment-one">--}}
-{{--                        <h3 class="comment-one__title">2 Comments</h3>--}}
-{{--                        <div class="comment-one__single">--}}
-{{--                            <div class="comment-one__image"> <img src="https://via.placeholder.com/240x241" alt=""> </div>--}}
-{{--                            <div class="comment-one__content">--}}
-{{--                                <h3>Kevin Martin</h3>--}}
-{{--                                <p>Mauris non dignissim purus, ac commodo diam. Donec sit amet lacinia nulla.Aliquam quis purus in justo pulvinar tempor. Aliquam tellus nulla,sollicitudin at euismod.--}}
-{{--                                </p>--}}
-{{--                                <a href="news-details.html" class="theme-btn btn-style-one comment-one__btn"><span class="btn-title">Reply</span></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="comment-one__single">--}}
-{{--                            <div class="comment-one__image"> <img src="https://via.placeholder.com/240x241" alt=""> </div>--}}
-{{--                            <div class="comment-one__content">--}}
-{{--                                <h3>Sarah Albert</h3>--}}
-{{--                                <p>Mauris non dignissim purus, ac commodo diam. Donec sit amet lacinia nulla.Aliquam quis purus in justo pulvinar tempor. Aliquam tellus nulla,sollicitudin at euismod.--}}
-{{--                                </p>--}}
-{{--                                <a href="news-details.html" class="theme-btn btn-style-one comment-one__btn"><span class="btn-title">Reply</span></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="comment-form">--}}
-{{--                            <h3 class="comment-form__title mb-30">Leave a Comment</h3>--}}
-{{--                            <form id="contact_form" name="contact_form" class="" action="includes/sendmail.php" method="post">--}}
-{{--                                <div class="row">--}}
-{{--                                    <div class="col-sm-6">--}}
-{{--                                        <div class="mb-3">--}}
-{{--                                            <input name="form_name" class="form-control" type="text" placeholder="Enter Name">--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="col-sm-6">--}}
-{{--                                        <div class="mb-3">--}}
-{{--                                            <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="mb-3">--}}
-{{--                                    <textarea name="form_message" class="form-control required" rows="5" placeholder="Enter Message"></textarea>--}}
-{{--                                </div>--}}
-{{--                                <div class="mb-3">--}}
-{{--                                    <input name="form_botcheck" class="form-control" type="hidden" value="" />--}}
-{{--                                    <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Submit Comment</span></button>--}}
-{{--                                </div>--}}
-{{--                            </form>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    <div class="comment-one">
+                        <h3 class="comment-one__title">2 commentaire(s)</h3>
+                        @foreach($commentaires as $commentaire)
+                        <div class="comment-one__single" style="margin-bottom: 30px;padding-bottom: 0; border-bottom: none">
+{{--                            <div class="comment-one__image"> <img src="https://via.placeholder.com/100x100" alt=""> </div>--}}
+                                <div class="comment-one__content">
+                                    <h3>{{ $commentaire->nom }} a commenté :</h3>
+                                    <p>{{ $commentaire->content }}</p>
+                                    {{--                                <a href="news-details.html" class="theme-btn btn-style-one comment-one__btn"><span class="btn-title">Reply</span></a>--}}
+                                </div>
+                        </div>
+                        @endforeach
+                        <div style="margin-bottom: 30px;">{{ $commentaires->links() }}</div>
+                        <div class="comment-form">
+                            <h3 class="comment-form__title mb-30">Laissez un commentaire</h3>
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <form id="contact_form" name="contact_form" class="" action="{{ route('postComment') }}" method="post">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="mb-3">
+                                            <input name="nom" class="form-control" type="text" placeholder="Enter Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="mb-3">
+                                            <input name="email" class="form-control required email" type="email" placeholder="Enter Email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea name="content" class="form-control required" rows="5" placeholder="Enter Message"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <input name="publication" class="form-control" type="hidden" value={{ $publication->slug }} />
+                                    <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Soumettre le commentaire</span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-5">

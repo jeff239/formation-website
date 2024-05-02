@@ -13,6 +13,7 @@ class Formation extends Model
         'title',
         'image',
         'content',
-        'slug'
+        'slug',
+        'banner'
     ];
 }

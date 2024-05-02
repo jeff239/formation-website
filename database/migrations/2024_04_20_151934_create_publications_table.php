@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('publications', function (Blueprint $table) {
             $table->id();
             $table->string('author');
-            $table->foreign('author')->references('name')->on('users');
-            $table->string('title');
-            $table->string('slug');
+            $table->foreign('author')->references('name')->on('users')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->string('title')->unique();
+            $table->string('banner')->nullable();
+            $table->string('slug')->unique();
             $table->string('category');
-            $table->foreign('category')->references('name')->on('categories');
+            $table->foreign('category')->references('name')->on('categories')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('image');
             $table->text('content');
             $table->timestamps();

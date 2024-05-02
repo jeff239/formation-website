@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categorie;
+use App\Models\Commentaire;
 use App\Models\Formation;
 use App\Models\Publication;
+use App\Models\Question;
 use Illuminate\Http\Request;
 
 class RouterController extends Controller
@@ -39,11 +41,10 @@ class RouterController extends Controller
             ]
         ];
         $formation = Formation::where('slug', $formation)->first();
-        $listFormations = Formation::
-//        where('slug','!=',$formation)
-//            ->
-            inRandomOrder()->get()->take(4);
-        return view('web.Formations.FormationDetails', compact('breadcumbData', 'formation', 'listFormations'));
+        $banner = $formation->banner;
+        $listFormations = Formation::where('slug','!=',$formation)->inRandomOrder()->get()->take(4);
+        $questions = Question::where('formation',$formation->title)->get();
+        return view('web.Formations.FormationDetails', compact('breadcumbData', 'formation', 'listFormations','banner','questions'));
     }
 
     public function publications(){
@@ -65,7 +66,19 @@ class RouterController extends Controller
         ];
         $categories = Categorie::inRandomOrder()->get()->take(5);
         $publication = Publication::where('slug',$article)->first();
+        $banner = $publication->banner;
         $latestPublications = Publication::where('slug','!=',$article)->inRandomOrder()->get()->take(4);
-        return view('web.Blog.PublicationDetails', compact('breadcumbData','publication', 'categories', 'latestPublications'));
+        $commentaires = Commentaire::where('publication', $article)->orderBy('created_at')->simplePaginate(10);
+
+        return view('web.Blog.PublicationDetails', compact('breadcumbData','publication', 'categories', 'latestPublications', 'banner', 'commentaires'));
     }
+
+    public function publicationsCategories(string $categorie){
+        $breadcumbData = [
+            'title' => 'Publications', 'path' => ['Accueil' => route('accueil'), 'Publications' => route('publications')]
+        ];
+        $publications = Publication::all('author','title','image','created_at','category','slug')->where('category',$categorie);
+        return view('web.Blog.Publications', compact('breadcumbData','publications'));
+    }
+
 }

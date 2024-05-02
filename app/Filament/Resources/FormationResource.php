@@ -31,7 +31,7 @@ class FormationResource extends Resource
                     Forms\Components\TextInput::make('title')
                         ->placeholder('Entrez le titre de la formation')
                         ->required()
-                        ->live(debounce: 500)
+                        ->live(debounce: 1000)
                         ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
                         ->maxLength(255)
                 ]),
@@ -52,6 +52,13 @@ class FormationResource extends Resource
                     ->getUploadedFileNameForStorageUsing(
                         fn (TemporaryUploadedFile $file): string => (string) str(uniqid("img-", true)),
                     )
+                    ->required(),
+                Forms\Components\FileUpload::make('banner')
+                    ->image()
+                    ->visibility('public')
+                    ->getUploadedFileNameForStorageUsing(
+                        fn (TemporaryUploadedFile $file): string => (string) str(uniqid("img-", true)),
+                    )
                     ->required()
             ]);
     }
@@ -63,6 +70,7 @@ class FormationResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('banner'),
                 Tables\Columns\TextColumn::make('content')
                     ->limit(20)
                     ->searchable(),

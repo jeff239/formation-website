@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Publication extends Model
 {
@@ -16,7 +17,8 @@ class Publication extends Model
         'category',
         'image',
         'content',
-        'slug'
+        'slug',
+        'banner'
     ];
 
     public function categorie(): BelongsTo{
@@ -26,5 +28,9 @@ class Publication extends Model
     public function auteur(): BelongsTo
     {
         return $this->belongsTo(User::class, 'author', 'name');
+    }
+
+    public function commentaires(): HasMany{
+        return $this->hasMany(Commentaire::class,'publication','title');
     }
 }

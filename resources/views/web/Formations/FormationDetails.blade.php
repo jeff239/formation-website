@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-    @include('features.sections.Breadcumb.Breadcumb',$breadcumbData)
-    @include('features.sections.ServicesDetails', compact('formation', 'listFormations'))
+    @include('features.sections.Breadcumb.Breadcumb',compact('breadcumbData','banner'))
+    @include('features.sections.ServicesDetails', compact('formation', 'listFormations', 'questions'))
 @endsection

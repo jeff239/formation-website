@@ -8,7 +8,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image">
-                                <a href={{ route('formationDetails', ['formation' => 'Formation 1']) }}>
+                                <a href={{ route('formationDetails', ['formation' => $formation->slug]) }}>
                                     <img src={{ asset(sprintf('storage/%s',$formation->image)) }} alt="">
                                 </a>
                             </figure>

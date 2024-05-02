@@ -72,7 +72,7 @@
         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
         <nav class="menu-box">
             <div class="upper-box">
-                <div class="nav-logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+                <div class="nav-logo"><a href={{ route('accueil') }}><img src={{ asset("storage/01HW0FAXYRB67BP5GYTBF7QYRC.jpg") }} alt=""></a></div>
                 <div class="close-btn"><i class="icon fa fa-times"></i></div>
             </div>
             <ul class="navigation clearfix">
@@ -97,19 +97,19 @@
     <!-- End Mobile Menu -->
 
     <!-- Header Search -->
-    <div class="search-popup"> <span class="search-back-drop"></span>
-        <button class="close-search"><span class="fa fa-times"></span></button>
-        <div class="search-inner">
-            <form method="post" action="index.html">
-                <div class="form-group">
-                    <label>
-                        <input type="text" name="search-field" value="" placeholder="Search..." required="">
-                    </label>
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </div>
-            </form>
-        </div>
-    </div>
+{{--    <div class="search-popup"> <span class="search-back-drop"></span>--}}
+{{--        <button class="close-search"><span class="fa fa-times"></span></button>--}}
+{{--        <div class="search-inner">--}}
+{{--            <form method="post" action="index.html">--}}
+{{--                <div class="form-group">--}}
+{{--                    <label>--}}
+{{--                        <input type="text" name="search-field" value="" placeholder="Search..." required="">--}}
+{{--                    </label>--}}
+{{--                    <button type="submit"><i class="fa fa-search"></i></button>--}}
+{{--                </div>--}}
+{{--            </form>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <!-- End Header Search -->
 
     <!-- Sticky Header  -->

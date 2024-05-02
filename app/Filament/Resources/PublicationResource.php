@@ -37,7 +37,7 @@ class PublicationResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('title')
                     ->required()
-                    ->live(debounce: 500)
+                    ->live(debounce: 1000)
                     ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
                     ->maxLength(255),
                 Forms\Components\TextInput::make('slug')
@@ -56,6 +56,12 @@ class PublicationResource extends Resource
                         fn (TemporaryUploadedFile $file): string => (string) str(uniqid("img-", true)),
                     )
                     ->required(),
+                Forms\Components\FileUpload::make('banner')
+                    ->image()
+                    ->visibility('public')
+                    ->getUploadedFileNameForStorageUsing(
+                        fn (TemporaryUploadedFile $file): string => (string) str(uniqid("img-", true)),
+                    )
             ]);
     }
 
@@ -72,6 +78,7 @@ class PublicationResource extends Resource
                 Tables\Columns\TextColumn::make('category')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('banner'),
                 Tables\Columns\TextColumn::make('content')
                     ->limit(20)
                     ->searchable(),
