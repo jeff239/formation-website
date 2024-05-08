@@ -6,6 +6,7 @@ use App\Filament\Resources\FormateurResource\Pages;
 use App\Filament\Resources\FormateurResource\RelationManagers;
 use App\Models\Formateur;
 use Filament\Forms;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -17,33 +18,45 @@ class FormateurResource extends Resource
 {
     protected static ?string $model = Formateur::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('nom')
-                    ->required()
-                    ->maxLength(255)
-                    ->columnSpan([
-                        'sm' => 1
-                    ]),
-                Forms\Components\TextInput::make('titre')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('link_linkedin')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('link_twitter')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('link_facebook')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->required(),
+                Grid::make(2)->schema([
+                    Forms\Components\TextInput::make('nom')
+                        ->required()
+                        ->maxLength(255)
+                ]),
+                Grid::make(2)->schema([
+                    Forms\Components\TextInput::make('titre')
+                        ->required()
+                        ->maxLength(255)
+                ]),
+                Grid::make(2)->schema([
+                    Forms\Components\TextInput::make('link_linkedin')
+                        ->required()
+                        ->url()
+                        ->maxLength(255)
+                ]),
+                Grid::make(2)->schema([
+                    Forms\Components\TextInput::make('link_twitter')
+                        ->required()
+                        ->url()
+                        ->maxLength(255)
+                ]),
+                Grid::make(2)->schema([
+                    Forms\Components\TextInput::make('link_facebook')
+                        ->required()
+                        ->url()
+                        ->maxLength(255)
+                ]),
+                Grid::make(2)->schema([
+                    Forms\Components\FileUpload::make('image')
+                        ->image()
+                        ->required()
+                ]),
             ]);
     }
 

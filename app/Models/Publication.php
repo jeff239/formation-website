@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @property string $author
+ * @property string $title
+ * @property string $category
+ * @property string $image
+ * @property string $content
+ * @property string $slug
+ * @property string $banner
+ */
 class Publication extends Model
 {
     use HasFactory;

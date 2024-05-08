@@ -10,7 +10,7 @@
                         <div class="sidebar-service-list">
                             <ul>
                                 @foreach($listFormations as $element)
-                                    <li @class(['current' => $element->title == $formation->title])>
+                                    <li @class(['current' => $element->title == $formationDetails->title])>
                                         <a href={{ route('formationDetails', ['formation' => $element->slug] ) }} >
                                             <i class="fas fa-angle-right"></i>
                                             <span>{{ $element->title }}</span>
@@ -47,9 +47,9 @@
             <!--Start Services Details Content-->
             <div class="col-xl-8 col-lg-8">
                 <div class="services-details__content">
-                    <img src={{ asset(sprintf("storage/%s", $formation->image)) }} alt="">
-                    <h3 class="mt-4">{{ $formation->title }}</h3>
-                    {!! $formation->content !!}
+                    <img src={{ asset(sprintf("storage/%s", $formationDetails->image)) }} alt="">
+                    <h3 class="mt-4">{{ $formationDetails->title }}</h3>
+                    {!! $formationDetails->content !!}
 {{--                    <div class="content mt-40">--}}
 {{--                        <div class="text">--}}
 {{--                            <h3>Service Center</h3>--}}
