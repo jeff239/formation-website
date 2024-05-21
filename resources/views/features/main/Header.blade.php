@@ -52,10 +52,10 @@
                 <!-- Main Menu End-->
 
                 <div class="outer-box">
-                    <div class="ui-btn-outer">
+                    {{-- <div class="ui-btn-outer">
                         <button class="ui-btn ui-btn search-btn"> <span class="icon lnr lnr-icon-search"></span> </button>
                         <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
-                    </div>
+                    </div> --}}
                     <div class="contact-info">
                         <a href="tel:1234567890"> +92 (8800) - 9850</a><br><i class="icon fas fa-phone-flip"></i>
                     </div>

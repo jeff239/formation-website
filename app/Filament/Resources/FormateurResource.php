@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\FormateurResource\Pages;
-use App\Filament\Resources\FormateurResource\RelationManagers;
 use App\Models\Formateur;
 use Filament\Forms;
 use Filament\Forms\Components\Grid;
@@ -11,8 +10,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class FormateurResource extends Resource
 {
@@ -27,34 +24,30 @@ class FormateurResource extends Resource
                 Grid::make(2)->schema([
                     Forms\Components\TextInput::make('nom')
                         ->required()
-                        ->maxLength(255)
-                ]),
-                Grid::make(2)->schema([
+                        ->maxLength(255),
                     Forms\Components\TextInput::make('titre')
                         ->required()
                         ->maxLength(255)
                 ]),
-                Grid::make(2)->schema([
+                Grid::make(3)->schema([
                     Forms\Components\TextInput::make('link_linkedin')
-                        ->required()
+                        ->label('Lien Linkdin')
                         ->url()
-                        ->maxLength(255)
-                ]),
-                Grid::make(2)->schema([
+                        ->maxLength(255),
                     Forms\Components\TextInput::make('link_twitter')
-                        ->required()
+                        ->label('Lien Twitter')
                         ->url()
-                        ->maxLength(255)
-                ]),
-                Grid::make(2)->schema([
+                        ->maxLength(255),
                     Forms\Components\TextInput::make('link_facebook')
-                        ->required()
+                        ->label('Lien Facebook')
                         ->url()
                         ->maxLength(255)
                 ]),
                 Grid::make(2)->schema([
                     Forms\Components\FileUpload::make('image')
                         ->image()
+                        ->imageResizeTargetHeight(388)
+                        ->imageResizeTargetWidth(330)
                         ->required()
                 ]),
             ]);

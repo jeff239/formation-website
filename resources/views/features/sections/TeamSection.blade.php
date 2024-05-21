@@ -11,7 +11,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image overlay-anim">
-                                <img src="https://via.placeholder.com/330x388" alt="">
+                                <img src="{{ asset(sprintf('storage/%s',$formateur->image)) }}" alt="">
                             </figure>
                         </div>
                         <div class="content-box">

@@ -29,18 +29,22 @@ class PublicationResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Select::make('author')
+                    ->label('Auteur')
                     ->options(User::all()->pluck('name', 'name'))
                     ->required(),
                 Forms\Components\Select::make('category')
+                    ->label('Categories')
                     ->options(Categorie::all()->pluck('name', 'name'))
                     ->getOptionLabelFromRecordUsing(fn (Categorie $record) => "{$record->name}")
                     ->required(),
                 Forms\Components\TextInput::make('title')
+                    ->label('Titre de la publication')
                     ->required()
                     ->live(debounce: 1000)
                     ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
                     ->maxLength(255),
                 Forms\Components\TextInput::make('slug')
+                    ->label('Slug')
                     ->readOnly()
                     ->maxLength(255)
                     ->required(),
@@ -57,6 +61,7 @@ class PublicationResource extends Resource
                     )
                     ->required(),
                 Forms\Components\FileUpload::make('banner')
+                    ->label('Bannière')
                     ->image()
                     ->visibility('public')
                     ->getUploadedFileNameForStorageUsing(
