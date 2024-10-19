@@ -53,20 +53,20 @@
                 </div>
                 <div class="footer-column col-lg-4 col-md-6">
                     <div class="footer-widget contact-widget style-three">
-                        <h4 class="widget-title">Get In Touch</h4>
+                        <h4 class="widget-title">Informations</h4>
                         <div class="widgets-content">
                             <div class="contact-list-four">
                                 <ul>
                                     <li><i class="icon fa fa-phone"></i></li>
-                                    <li>General Quries</li>
-                                    <li class="mb-0"><a href="tel:+123456789">Phone: +1 555-7890-123</a></li>
-                                    <li><a href="#">Email: getsupport@info.com</a></li>
+                                    <li>Nous contacter</li>
+                                    <li class="mb-0"><a href="tel:+123456789">Phone: (+225) 0712624437</a></li>
+                                    <li><a href="#">Email: support@shark-technologies.com</a></li>
                                 </ul>
                                 <ul>
                                     <li><i class="icon fa fa-envelope"></i></li>
-                                    <li>Office Location</li>
+                                    <li>Localisation</li>
                                     <li class="mb-0"><a href="tel:+123456789">Boat House, 152/21 City Road</a></li>
-                                    <li><a href="#">Hoxton N1 6NG, UK.</a></li>
+                                    <li><a href="#">Abidjan CI</a></li>
                                 </ul>
                             </div>
                             <ul class="social-icon-two">

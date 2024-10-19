@@ -7,7 +7,7 @@
         <div class="main-box">
             <div class="logo-box">
                 <div class="logo"><a href={{ route('accueil') }}>
-                        <img src={{ asset("storage/01HW0FAXYRB67BP5GYTBF7QYRC.jpg") }} alt="" title="Tronis" width="100"></a>
+                        <img src={{ asset("storage/01HW0FAXYRB67BP5GYTBF7QYRC.png") }} alt="" title="Tronis" width="100" alt="logo"></a>
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
                         <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
                     </div> --}}
                     <div class="contact-info">
-                        <a href="tel:1234567890"> +92 (8800) - 9850</a><br><i class="icon fas fa-phone-flip"></i>
+                        <a href="tel:0712624437"> (+225) 0712624437</a><br><i class="icon fas fa-phone-flip"></i>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
         <nav class="menu-box">
             <div class="upper-box">
-                <div class="nav-logo"><a href={{ route('accueil') }}><img src={{ asset("storage/01HW0FAXYRB67BP5GYTBF7QYRC.jpg") }} alt=""></a></div>
+                <div class="nav-logo"><a href={{ route('accueil') }}><img src={{ asset("storage/01HW0FAXYRB67BP5GYTBF7QYRC.jpg") }} alt="" /></a></div>
                 <div class="close-btn"><i class="icon fa fa-times"></i></div>
             </div>
             <ul class="navigation clearfix">

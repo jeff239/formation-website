@@ -1,8 +1,8 @@
 <!-- project-section Four -->
 <section class="project-section-three pt-0">
     <div class="auto-container">
-        <div class="sec-title-two text-center"> <span class="sub-title">Work Showcase</span>
-            <h2>Latest Working Project</h2>
+        <div class="sec-title-two text-center"> <span class="sub-title">Nos prestations</span>
+            <h2>Nos dernières réalisations</h2>
         </div>
         <div class="outer-box">
             <div class="row project-carousel owl-carousel owl-theme">

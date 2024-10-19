@@ -8,8 +8,6 @@
 
         @include('features.sections.About')
 
-        @include('features.sections.BenifetSection')
-
         @include('features.sections.ClientSection')
 
         @include('features.sections.TestmonialSection')
@@ -18,13 +16,9 @@
 
         @include('features.sections.ProjectSection')
 
-        @include('features.sections.VideoSection')
-
         @include('features.sections.FunFactSection')
 
         @include('features.sections.TeamSection')
-
-        @include('features.sections.ProcessSection')
 
         @include('features.sections.Newsletter')
 

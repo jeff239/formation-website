@@ -8,7 +8,7 @@
                     <div class="inner">
                         <div class="image-box"> <img src="images/icons/fun1-2.png" alt=""> </div>
                         <div class="count-box"><span class="count-text" data-speed="3000" data-stop="8812">0</span></div>
-                        <h6 class="counter-title">Satisfied Clients</h6>
+                        <h6 class="counter-title">Clients satisfaits</h6>
                     </div>
                 </div>
                 <!-- Counter block -->
@@ -16,7 +16,7 @@
                     <div class="inner">
                         <div class="image-box"> <img src="images/icons/fun1-1.png" alt=""> </div>
                         <div class="count-box"><span class="count-text" data-speed="3000" data-stop="3603">0</span></div>
-                        <h6 class="counter-title">Awards Winners</h6>
+                        <h6 class="counter-title">Certifications internationnales</h6>
                     </div>
                 </div>
                 <!-- Counter block -->
@@ -24,7 +24,7 @@
                     <div class="inner">
                         <div class="image-box"> <img src="images/icons/fun1-3.png" alt=""> </div>
                         <div class="count-box"><span class="count-text" data-speed="3000" data-stop="280">0</span>+</div>
-                        <h6 class="counter-title">Expert Members</h6>
+                        <h6 class="counter-title">Experts</h6>
                     </div>
                 </div>
                 <!-- Counter block -->
@@ -32,7 +32,7 @@
                     <div class="inner">
                         <div class="image-box"> <img src="images/icons/fun1-4.png" alt=""> </div>
                         <div class="count-box"><span class="count-text" data-speed="3000" data-stop="6823">0</span></div>
-                        <h6 class="counter-title">Project Complated</h6>
+                        <h6 class="counter-title">Projets effectués</h6>
                     </div>
                 </div>
             </div>

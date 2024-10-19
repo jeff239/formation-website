@@ -5,10 +5,12 @@
             <!-- content-column -->
             <div class="content-column col-lg-5">
                 <div class="inner-column">
-                    <div class="sec-title-two"> <span class="sub-title">News & Articles</span>
-                        <h2>Read Our Latest Tips & Tricks</h2>
+                    <div class="sec-title-two"> <span class="sub-title">Informations et Articles</span>
+                        <h2>Lire nos derniers articles</h2>
                         <div class="outer-box">
-                            <div class="text"> There are many types of business agencies, and it’s important to choose a niche that sets you apart from the competition. Focus on a specific area of expertise, such as marketing for small businesses or HR consulting for startups. </div>
+                            <div class="text">
+                                Nous vous proposons sur notre blog, plusieurs articles dans nos domaines respectifs d'expertise.
+                            </div>
                         </div>
                     </div>
                 </div>

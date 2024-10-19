@@ -1,8 +1,8 @@
 <!-- team section -->
 <section class="team-section-three pt-0 pb-0">
     <div class="small-container">
-        <div class="sec-title-two text-center"> <span class="sub-title">Les membres de notre équipe</span>
-            <h2>Rencontrez nos Experts</h2>
+        <div class="sec-title-two text-center"> <span class="sub-title">Notre équipe</span>
+            <h2>Découvrez notre jeune équipe d'experts</h2>
         </div>
         <div class="row">
             <!-- team-block-three -->
